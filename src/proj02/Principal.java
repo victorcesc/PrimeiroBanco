@@ -5,6 +5,9 @@
  */
 package proj02;
 
+import java.util.Iterator;
+import java.util.List;
+
 /**
  *
  * @author aluno
@@ -15,9 +18,17 @@ public class Principal {
         
         PessoaDAO pDao = new PessoaDAO();
         
-        Pessoa p = new Pessoa("Juca","1234","juca@email",80,180);
+        //Pessoa p = new Pessoa("Juca","1234","juca@email",80,180);
         
-        pDao.inserir(p);
+       // pDao.inserir(p);
+       
+       List<Pessoa> contatos = pDao.listarTodas();
+        for (Iterator<Pessoa> iterator = contatos.iterator(); iterator.hasNext();) {
+            Pessoa next = iterator.next();
+            System.out.println("Nome: " + next.getNome());
+            
+        }
+       
         
         
     
